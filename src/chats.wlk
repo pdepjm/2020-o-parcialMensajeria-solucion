@@ -39,15 +39,7 @@ class Chat {
 	//
 	method liberar() { mensajes.remove(self.mensajeMasPesado()) }
 
-	
-	method esCon(unReceptor) = participantes.contains(unReceptor)
-	method agregarMensaje(mensaje) = mensajes.add(mensaje)
-	method tieneMasMensajesQue(otro) = self.cantMensajes() > otro.cantMensajes()
-	method cantMensajes() = mensajes.size()
-	method abrir() {
-		mensajes.forEach{ mensaje => mensaje.serLeido() }
-	}
-	method cantMensajesSinLeer() = mensajes.filter { mensaje => not mensaje.leido() }.size()
+
 
 }
 
