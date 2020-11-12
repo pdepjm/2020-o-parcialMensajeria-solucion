@@ -1,19 +1,16 @@
 // Puntos de entrada
-// Punto 1: unMensaje.peso()
-// Punto 2: unUsuario.enviar(unMensaje, otroUsuario)
-// Punto 3: unUsuario.chatsDestacados()
-// Punto 4: unUsuario.liberarEspacio()
-// Punto 5: unChat.abrir()
-// Punto 6: unUsuario.cantMensajesSinLeer()
+// Punto 1: 
+// Punto 2: 
+// Punto 3: 
+// Punto 4: 
+// Punto 5: 
+// Punto 6: 
 
 class Mensaje {
 	const contenido
-	var property leido = false
+	var property emisor
 	
 	method peso() = 5 + contenido.peso() * 1.3
-	method serLeido() {
-		leido = true
-	}
 }
 
 /***** Contenidos ******/
@@ -36,20 +33,20 @@ class Contacto {
 class Imagen {
 	const alto
 	const ancho
-	const modo = tamanioOriginal
-	method peso() = modo.pixelesAEnviar(ancho * alto) * 2
+	const compresion = original
+	method peso() = compresion.pixelesAEnviar(ancho * alto) * 2
 }
 
-object tamanioOriginal {
+object original {
 	method pixelesAEnviar(cant) = cant
 }
 
-class TamanioVariable {
+class Variable {
 	const porcentaje
 	method pixelesAEnviar(cant) = cant * porcentaje
 }
 
-object tamanioReducido {
+object maxima {
 	method pixelesAEnviar(cant) = cant.min(10000)
 }
 
