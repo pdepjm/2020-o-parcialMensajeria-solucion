@@ -37,7 +37,7 @@ class Chat {
 	}
 	
 	//
-	method liberar() { mensajes.remove(self.mensajeMasPesado()) }
+	method contiene(texto) = mensajes.any({m => m.contiene(texto)})
 
 
 

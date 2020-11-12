@@ -4,8 +4,8 @@ import chats.*
 
 describe "Wolloksapp" {
 
-	const alf = new Usuario(memoria = 100)
-	const rasta = new Usuario(memoria = 1000)
+	const alf = new Usuario(memoria = 100, nombre = "Alfredo")
+	const rasta = new Usuario(memoria = 1000, nombre = "Nahuel")
 	const chat = new Chat(participantes = [ alf, rasta ])
 	const mensaje = new Mensaje(contenido = new Texto(elTexto = "Hola"), emisor = alf)
 
@@ -33,9 +33,8 @@ describe "Wolloksapp" {
 		assert.equals(1, alf.notificacionesSinLeer().size())
 	}
 
-	test "Chats destacados" {
-		alf.liberarEspacio()
-		assert.equals([], chat.mensajes())
+	test "Buscar" {
+		assert.equals([chat], alf.buscar("Hola"))
 	}
 
 }

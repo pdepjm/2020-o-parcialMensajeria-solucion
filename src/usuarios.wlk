@@ -1,6 +1,7 @@
 import chats.*
 
 class Usuario {
+	const property nombre
 	const memoria
 	const chats = []
 	const notificaciones = []
@@ -26,8 +27,7 @@ class Usuario {
 	method notificacionesSinLeer() = notificaciones.filter({n => not n.leida()})
 	
 	//
-	method liberarEspacio() {
-		chats.forEach({c => c.liberar()})
-	}
+	method buscar(texto) = chats.filter({c => c.contiene(texto)})
 	
+	method contiene(texto) = nombre.contains(texto)
 }
